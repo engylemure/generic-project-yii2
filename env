@@ -1,8 +1,8 @@
-VIRTUAL_HOST=axbroker.docker
-DEFAULT_HOST=axbroker.docker
-ANPCONT_DOMAIN=axbroker.docker
+VIRTUAL_HOST=generic.docker
+DEFAULT_HOST=generic.docker
+ANPCONT_DOMAIN=generic.docker
 DB_HOST=db
-DB_NAME=axbroker
+DB_NAME=generic
 DB_USER=root
 DB_PASS=root
 REDIS_HOST=redis

@@ -6,7 +6,7 @@ services:
      links:
         - php
      environment:
-        - VIRTUAL_HOST= generic.docker
+        - VIRTUAL_HOST=generic.docker
         - VIRTUAL_PORT=80
      volumes:
         - vhost:/etc/nginx/conf.d:ro
@@ -17,14 +17,11 @@ services:
      network_mode: bridge
      links:
         - db
-        - redis
      volumes:
         - /srv/www
         - vhost:/runtime
         - ./src/www:/srv/www
      env_file: env
-
-
   db:
      image: mysql
      network_mode: bridge

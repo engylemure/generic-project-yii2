@@ -6,7 +6,7 @@ WORKDIR /srv/www
 RUN docker-php-ext-install exif
 
 
-#RUN npm install -g bower
+RUN npm install -g bower
 
 ADD src/docker/files /src
 RUN cp -rf /src/* /

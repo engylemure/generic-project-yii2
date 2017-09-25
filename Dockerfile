@@ -14,6 +14,9 @@ RUN rm -rf /src
 
 ADD src/www /srv/www
 
+# Remove if in production enviroment.
+RUN composer install
+
 #RUN composer --working-dir=/srv/www install --no-dev -v --prefer-dist && composer clear-cache
 #RUN composer --working-dir=/srv/www dumpautoload -o
 #RUN chmod 0777 /srv/www/runtime /srv/www/web/assets /srv/www/web/runtime/export

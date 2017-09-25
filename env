@@ -1,0 +1,13 @@
+VIRTUAL_HOST=axbroker.docker
+DEFAULT_HOST=axbroker.docker
+ANPCONT_DOMAIN=axbroker.docker
+DB_HOST=db
+DB_NAME=axbroker
+DB_USER=root
+DB_PASS=root
+REDIS_HOST=redis
+YII_DEBUG=true
+YII_ENV=dev
+TERM=xterm
+MAX_FILESIZE=16
+TAWKTO_API_KEY=tawkto_api_key

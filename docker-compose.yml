@@ -1,0 +1,36 @@
+version: '2'
+services:
+  nginx:
+     image: nginx:alpine
+     network_mode: bridge
+     links:
+        - php
+     environment:
+        - VIRTUAL_HOST= generic.docker
+        - VIRTUAL_PORT=80
+     volumes:
+        - vhost:/etc/nginx/conf.d:ro
+     volumes_from:
+        - php
+  php:
+     build: .
+     network_mode: bridge
+     links:
+        - db
+        - redis
+     volumes:
+        - /srv/www
+        - vhost:/runtime
+        - ./src/www:/srv/www
+     env_file: env
+
+
+  db:
+     image: mysql
+     network_mode: bridge
+     command: --max_allowed_packet=512M
+     environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: generic
+volumes:
+  vhost:
